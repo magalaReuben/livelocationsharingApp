@@ -141,7 +141,7 @@ class signupstate extends State<Signup> {
       body: new Container(
         child: new Form(
           key: _formKeySeondary,
-          autovalidate: _autovalidate1,
+          autovalidateMode: ,
           child: new ListView(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             children: <Widget>[
