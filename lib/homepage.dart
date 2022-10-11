@@ -81,7 +81,7 @@ class groupBox extends StatelessWidget {
                 backgroundColor: const Color.fromRGBO(0, 0, 0, 0.2),
               ),
             ),
-            new FlatButton(
+            new TextButton(
                 onPressed: () {
                   groupStatusGroupname = snapshot.value;
                   RoutesHelper.pushRoute(context, ROUTE_GROUP);
