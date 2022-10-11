@@ -178,7 +178,7 @@ class AddGroupstate extends State<AddGroup> {
     return new Scaffold(
       key: _scaffoldKeySecondary1,
       body: new Form(
-        autovalidate: true,
+        autovalidateMode: AutovalidateMode.always,
         key: _groupformKey,
         child: new ListView(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
