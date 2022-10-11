@@ -273,13 +273,13 @@ class GroupStatusState extends State<GroupStatus> {
                     Navigator.of(context).pop();
                   },
                 )
-              : new FlatButton(
+              : new TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
                   child: new Icon(Icons.keyboard_backspace)),
           actions: <Widget>[
-            new FlatButton(
+            new TextButton(
                 onPressed: () async {
                   await Navigator.of(context).pushNamed(ROUTE_MAP);
                 },
