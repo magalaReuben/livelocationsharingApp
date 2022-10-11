@@ -269,7 +269,9 @@ class SigninFormState extends State<SignInForm>
                   children: <Widget>[
                     new Form(
                       key: _formKey,
-                      autovalidate: _autovalidate,
+                      autovalidateMode: _autovalidate
+                          ? AutovalidateMode.always
+                          : AutovalidateMode.disabled,
                       child: new Column(
                         children: <Widget>[
                           new Container(
