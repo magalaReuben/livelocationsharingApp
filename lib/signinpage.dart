@@ -83,8 +83,12 @@ class SigninFormState extends State<SignInForm>
   );
 
   void showInSnackBar(String value) {
-    _scaffoldKey.currentState
-        .showSnackBar(new SnackBar(content: new Text(value)));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(value),
+        duration: Duration(milliseconds: 300),
+      ),
+    );
   }
 
 //  _ensureLoggedIn() async {
@@ -115,8 +119,7 @@ class SigninFormState extends State<SignInForm>
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
-    User firebaseUser =
-        (await _auth.signInWithCredential(credential)).user;
+    User firebaseUser = (await _auth.signInWithCredential(credential)).user;
     GoogleSignInAccount user;
     setState(() {
       user = googleUser;
@@ -168,9 +171,7 @@ class SigninFormState extends State<SignInForm>
           _isgooglesigincomplete = true;
         });
       }
-
     }
-
   }
 
   _handleSubmitted() async {
@@ -209,8 +210,7 @@ class SigninFormState extends State<SignInForm>
 
   setGoogleSigninListener() {
     _googleSignIn.onCurrentUserChanged
-        .listen((GoogleSignInAccount account) async {
-    });
+        .listen((GoogleSignInAccount account) async {});
     _googleSignIn.signInSilently();
   }
 
@@ -331,7 +331,7 @@ class SigninFormState extends State<SignInForm>
                           buttonColor: const Color.fromRGBO(100, 100, 100, 1.0),
                         ),
 
-/// UNCOMMENT IF YOU WANT TO SIGNIN THROUGH GOOGLE
+                        /// UNCOMMENT IF YOU WANT TO SIGNIN THROUGH GOOGLE
 //                        (_isgooglesigincomplete
 //                            ? new FloatingActionButton(
 //                                child:
